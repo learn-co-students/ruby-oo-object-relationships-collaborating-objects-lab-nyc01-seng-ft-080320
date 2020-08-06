@@ -1,7 +1,6 @@
 require 'pry'
 class Song
-    attr_reader :artist
-    attr_accessor :name
+    attr_accessor :name, :artist
     @@all = []
     
     def initialize(name)
@@ -19,7 +18,6 @@ class Song
 
     def artist_name=(name)
         self.artist = Artist.find_or_create_by_name(name)
-        # self.artist ? self.artist.name : nil
     end
 
     def self.all
